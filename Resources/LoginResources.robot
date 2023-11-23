@@ -1,7 +1,7 @@
 *** Settings ***
 
 Library    SeleniumLibrary
-Variables  ../Locators/LoginPageLocators.py
+Variables  ../Locators/login_page_locators.py
 
 *** Keywords ***
 

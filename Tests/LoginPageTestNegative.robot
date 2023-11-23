@@ -3,8 +3,8 @@
 Library          SeleniumLibrary
 Test Setup       Open the Browser with URL
 Test Teardown    Close Browser Session
-Variables        ../Locators/BaseLocators.py
-Variables        ../Locators/LoginPageLocators.py
+Variables        ../Locators/base_locators.py
+Variables        ../Locators/login_page_locators.py
 Resource         ../Resources/LoginResources.robot
 Resource         ../Resources/GenericResources.robot
 
