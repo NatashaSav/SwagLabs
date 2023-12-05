@@ -17,7 +17,7 @@ Login for user with incorrect password
 
 
 Login for user with incorrect username
-    LoginResources.Fill the login form                         ${ORDINARY_USER}           ${CORRECT_PASSWORD}
+    LoginResources.Fill out the authorization form with the generated email
     LoginResources.Verify that the error message is correct    ${ERROR_MSG_LOCATOR}       ${ERROR_MSG_TEXT}
 
 

@@ -16,7 +16,7 @@ Verify current url
 
 Go to the shopping cart
     LoginResources.Fill the login form                                      ${STANDARD_USER_NAME}    ${CORRECT_PASSWORD}
-    Click Button                                                            ${SAUCE_LABS_BACKPACK_BTN}
+    Click Element                                                           ${SAUCE_LABS_BACKPACK_BTN}
     Double Click Element                                                    ${SHOPPING_CART_LINK}
     ProductResources.Verify current url                                     ${SHOPPING_CART_URL}
 

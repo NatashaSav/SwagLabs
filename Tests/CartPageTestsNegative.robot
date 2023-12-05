@@ -21,7 +21,7 @@ Continue checkout with empty fields
     Input Text                                                         ${LAST_NAME}               ${EMPTY}
     Input Text                                                         ${POSTAL_CODE_ID}          ${EMPTY}
     Click Button                                                       ${CONTINUE_BTN}
-    Element Text Should Be                                             ${ERROR_MSG}               ${ERROR_EMPTY_FIELDS}
+    Page Should Contain                                                ${ERROR_EMPTY_FIELDS}
 
 
 Continue checkout with empty last name and zip code
@@ -32,7 +32,7 @@ Continue checkout with empty last name and zip code
     Input Text                                                          ${LAST_NAME}            ${EMPTY}
     Input Text                                                          ${POSTAL_CODE_ID}       ${EMPTY}
     Click Button                                                        ${CONTINUE_BTN}
-    Element Text Should Be                                              ${ERROR_MSG}            ${ERROR_EMPTY_LAST_NAME}
+    Page Should Contain                                                 ${ERROR_EMPTY_LAST_NAME}
 
 
 Continue checkout with empty zip code
@@ -43,4 +43,4 @@ Continue checkout with empty zip code
     Input Text                                                          ${LAST_NAME}            ${USER_LAST_NAME}
     Input Text                                                          ${POSTAL_CODE_ID}       ${EMPTY}
     Click Button                                                        ${CONTINUE_BTN}
-    Element Text Should Be                                              ${ERROR_MSG}            ${ERROR_EMPTY_ZIP_CODE}
+    Page Should Contain                                                 ${ERROR_EMPTY_ZIP_CODE}

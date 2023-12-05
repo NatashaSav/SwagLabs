@@ -43,7 +43,7 @@ Check links for burger button
     Click Button                                              ${BURGER_BTN}
     Page Should Contain Link                                  ${ABOUT_BTN}
     Page Should Contain Link                                  ${ALL_ITEMS_BTN}
-    Page Should Contain Link                                  ${LOGOUT_BTN}
+    Page Should Contain Link                                  ${LOGOUT}
     Page Should Contain Link                                  ${RESET_APP_STATE_BTN}
 
 
@@ -56,11 +56,11 @@ Check "Add to cart" button is clickable
 
 Check that product cart is clickable
     LoginResources.Fill the login form                      ${STANDARD_USER_NAME}           ${CORRECT_PASSWORD}
-    Click Button                                            ${SAUCE_LABS_BIKE_LIGHT}
+    Click Element                                           ${SAUCE_LABS_BIKE_LIGHT}
     ${url}=   Get Location
-    Should Match Regexp                                     ${url}                          ${SAUCE_LABS_BIKE_LIGHT_URL}
+    Should Be Equal As Strings                              ${url}                          ${SAUCE_LABS_BIKE_LIGHT_URL}
     Click Button                                            ${BACK_TO_PRODUCTS_BTN}
-    Title Should Be                                         Products
+    SeleniumLibrary.Element Text Should Be                  ${TITLE}                        Products
 
 
 Verify that page has logo
@@ -90,3 +90,20 @@ Sorting carts by price from high to low
    LoginResources.Fill the login form                      ${STANDARD_USER_NAME}             ${CORRECT_PASSWORD}
    Select From List By Value                               ${PRODUCT_SORT}                   hilo
    List Selection Should Be                                ${PRODUCT_SORT}                   Price (high to low)
+
+
+Logout of Swag Labs
+   LoginResources.Fill the login form                     ${STANDARD_USER_NAME}             ${CORRECT_PASSWORD}
+   Click Button                                           ${BURGER_BTN}
+   Click Element                                          ${LOGOUT}
+   ProductResources.Verify current url                    ${WEBSITE_URL}
+
+
+Reset App State of Swag Labs
+   LoginResources.Fill the login form                     ${STANDARD_USER_NAME}             ${CORRECT_PASSWORD}
+   Click Element                                          ${SAUCE_LABS_BACKPACK_BTN}
+   Element Should Contain                                 ${CART_BADGE}                     1
+   Click Button                                           ${BURGER_BTN}
+   Click Element                                          ${RESET_APP_STATE_BTN}
+   ${msg}=    Run Keyword And Expect Error    *           Page Should Not Contain Button    ${REMOVE_BTN}
+   Should Contain                                         ${msg}                            ${ERROR_MSG}

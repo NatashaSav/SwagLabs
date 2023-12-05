@@ -11,7 +11,7 @@ Resource        ../Resources/GenericResources.robot
 
 
 Successful login for standard user
-    LoginResources.Fill the login form                      ${STANDARD_USER_NAME}      ${CORRECT_PASSWORD}
+    LoginResources.Fill the login form                      ${STANDARD_USER_NAME}         ${CORRECT_PASSWORD}
     LoginResources.Verify that the user is logged in        ${CART_LINK}
 
 
@@ -23,25 +23,25 @@ Successful login for user with glitch
 
 
 Successful login for problem user
-    LoginResources.Fill the login form                       ${PROBLEM_USER}      ${CORRECT_PASSWORD}
+    LoginResources.Fill the login form                       ${PROBLEM_USER}              ${CORRECT_PASSWORD}
     LoginResources.Verify that the user is logged in         ${CART_LINK}
 
 
 
 Successful login for locked user
-    LoginResources.Fill the login form                        ${LOCKED_USER}      ${CORRECT_PASSWORD}
-    LoginResources.Verify that the error message is correct   ${LOCKED_USER}      ${ERROR_MSG_FOR_LOCKED_USER}
+    LoginResources.Fill the login form                        ${LOCKED_USER}              ${CORRECT_PASSWORD}
+    LoginResources.Verify that the error message is correct   ${LOCKED_USER}              ${ERROR_MSG_FOR_LOCKED_USER}
 
 
 
 Successful login for error user
-    LoginResources.Fill the login form                         ${ERROR_USER}      ${CORRECT_PASSWORD}
+    LoginResources.Fill the login form                         ${ERROR_USER}              ${CORRECT_PASSWORD}
     LoginResources.Verify that the user is logged in           ${CART_LINK}
 
 
 
 Successful login for visual user
-    LoginResources.Fill the login form                         ${VISIAL_USER}      ${CORRECT_PASSWORD}
+    LoginResources.Fill the login form                         ${VISIAL_USER}             ${CORRECT_PASSWORD}
     LoginResources.Verify that the user is logged in           ${CART_LINK}
 
 

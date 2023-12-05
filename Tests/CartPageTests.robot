@@ -36,5 +36,5 @@ Check button "Continue shopping"
 
 Remove item from the cart
      ProductResources.Go to the shopping cart
-     Click Button                                           ${REMOVE_SOURCE_LABS_BACKPACK}
-     Page Should Not Contain Element                        ${REMOVE_SOURCE_LABS_BACKPACK}
+     Click Button                                            ${REMOVE_BTN}
+     Page Should Not Contain Element                         ${REMOVE_BTN}
